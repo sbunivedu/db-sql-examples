@@ -59,3 +59,37 @@ Consider a database for kings and queens of England:
     both orders; i.e., list both (A,B) and (B,A). However, be careful not to
     list pairs A and B where the only overlap is that A's reign ended in the
     same year that B's began, or vice-versa.
+
+Consider a movie database:
+* Movie(title, year, length, inColor, studioName, producerC#)
+* StarsIn(movieTitle, movieYear, starName)
+* MovieStar(name, address, gender, birthdate)
+* MovieExec(name, address, cert#, netWorth)
+*Studio(name, address, presC#)
+
+__Note: producerC#, cert#, and presC# have the same meaning - certificate
+number.__
+
+25. Find all movies produced by Disney Studios in 1990.
+26. Find movies made after 1970 that are in black-and-white.
+27. Find movies made by MGM Studios that were either made before 1970 or were
+    less than 90 minutes long.
+28. You remember a movie 'Star something' and you remember that the something
+    has four letters. Find such movies.
+29. Find all movies with a possessive ('s) in their titles.
+30. Find all the stars that appeared either in a movie made in 1980 or a movie
+    with 'Love' in the title.
+31. Find the producer of 'Star Wars'.
+32. Find pairs consisting of a star and an executive with the same address.
+33. Find pairs of stars who share an address.
+34. Find the names and addresses of all female movie stars who are also movie
+    executives with a net worth over $10,000,000.
+35. Find the male stars in 'Terms of Endearment'.
+36. Find movies that are longer than 'Gone With the Wind'.
+37. Find the producers of Harrison Ford's movies.
+38. Find the titles that have been used for two or more movies.
+39. Find the average net worth of all movie executives.
+40. Find the sum of the lengths of all movies for each studio.
+41. Find each producer's total length of film produced.
+42. Find the total file length for producers who made at least on file prior
+    to 1930.

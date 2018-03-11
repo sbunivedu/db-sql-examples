@@ -182,3 +182,137 @@ FROM Kings k1, Kings k2
 WHERE (k1.beginReign < k2.beginReign AND k1.endReign > k2.beginReign)
 OR (k2.beginReign < k1.beginReign AND k1.endReign < k2.endReign);
 ```
+25.
+```
+
+SELECT *
+FROM Movie
+WHERE studioName = 'Disney' AND year = 1990;
+```
+26.
+```
+SELECT title
+FROM Movie
+WHERE year > 1970 AND NOT inColor;
+```
+27.
+```
+SELECT title
+FROM Movie
+WHERE (year > 1970 OR length < 90) AND studioName = 'MGM';
+```
+28.
+```
+SELECT title
+FROM Movie
+WHERE title LIKE 'Star____';
+```
+29.
+```
+SELECT title
+FROM Movie
+WHERE title LIKE '%''s%';
+```
+30.
+```
+SELECT starName
+FROM Movie
+WHERE movieYear = 1980 OR moiveTitle LIKE "%Love%";
+```
+31.
+```
+SELECT name
+FROM Movie, MovieExec
+WHERE title = 'Star Wars' AND producerC# = cert#;
+```
+32.
+```
+SELECT MovieStar.name, MovieExec.name
+FROM MovieStar, MovieExec
+WHERE MovieStar.address = MoiveExec.address;
+```
+33.
+```
+SELECT Star1.name, Star2.name
+FROM MovieStar AS Star1, MovieStar AS Star2
+WHERE Star1.address = Star2.address AND Star1.name < Star2.name;
+```
+34.
+```
+(SELECT name, address
+ FROM MovieStar
+ WHERE gender = 'F')
+INTERSECT
+(SELECT name, address
+ FROM MovieExec
+ WHERE netWorth > 10000000);
+```
+35.
+```
+FROM Movie, StarsIn, MovieStar
+WHERE title = movieTitle AND starName = name
+AND gender = 'male' AND title = 'Terms of Endearment';
+```
+36.
+```
+SELECT title
+FROM Moive
+WHERE length > (SELECT length FROM Movie WHERE title = 'Gone With the Wind');
+```
+37.
+```
+SELECT name
+FROM MovieExec
+WHERE cert# IN
+  (SELECT producerC#
+   FROM Movie
+   WHERE (title, year) IN
+     (SELECT movieTitle, movieYear
+      FROM StarsIn
+      WHERE starName = 'Harrison Ford'
+     )
+   );
+
+SElECT name
+FROM MovieExec, Movie, StarsIn
+WHERE cert# = producerC#
+AND title = movieTitle
+AND year = movieYear
+AND starName = 'Harrison Ford';
+```
+38.
+```
+SELECT title
+FROM Movie AS Old
+WHERE year < ANY
+  (SElECT year
+   FROM Movie
+   WHERE title = Old.title
+  );
+```
+39.
+```
+SELECT AVG(netWorth)
+FROM MovieExec;
+```
+40.
+```
+SELECT studioName, SUM(length)
+FROM Movie
+GROUP BY studioName;
+```
+41.
+```
+SELECT name, SUM(length)
+FROM MovieExec, Movie
+WHERE producerC# = cert#
+GROUP BY name;
+```
+42.
+```
+SELECT name, SUM(length)
+FROM MovieExec, Movie
+WHERE producerC# = cert#
+GROUP BY name
+HAVING MIN(year) < 1930;
+```

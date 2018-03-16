@@ -289,6 +289,11 @@ WHERE year < ANY
    FROM Movie
    WHERE title = Old.title
   );
+
+SELECT title
+FROM Movie
+GROUP BY title
+HAVING count(*) > 1;
 ```
 39.
 ```

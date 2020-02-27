@@ -14,7 +14,7 @@ WHERE bar = 'Joe''s Bar' AND beer = 'Bud';
 ```
 SELECT name
 FROM Drinkers
-WHERE phone LIKE '%555-_ _ _ _';
+WHERE phone LIKE '%555-____';
 ```
 4.
 ```
@@ -184,7 +184,6 @@ OR (k2.beginReign < k1.beginReign AND k1.endReign < k2.endReign);
 ```
 25.
 ```
-
 SELECT *
 FROM Movie
 WHERE studioName = 'Disney' AND year = 1990;

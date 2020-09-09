@@ -76,7 +76,7 @@ FROM Beers b1, Beers b2
 WHERE b1.manf = b2.manf AND b1.name < b2.name;
 ```
 </details>
-    
+
 6. Find the bars that serve 'Miller' for the same price 'Joe' charges for 'Bud'.
 <details>
 <summary>answer</summary>
@@ -571,7 +571,7 @@ GROUP BY name;
 ```
 </details>
 
-42. Find the total file length for producers who made at least on file prior
+42. Find the total file length for producers who made at least on film prior
     to 1930.
 <details>
 <summary>answer</summary>

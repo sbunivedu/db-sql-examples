@@ -496,6 +496,7 @@ WHERE length > (SELECT length FROM Movie WHERE title = 'Gone With the Wind');
 37. Find the producers of Harrison Ford's movies.
 <details>
 <summary>answer</summary>
+
 ```sql
 SELECT name
 FROM MovieExec
